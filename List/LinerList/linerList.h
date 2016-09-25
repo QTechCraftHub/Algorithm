@@ -26,6 +26,6 @@ typedef struct{
 Status InitList_Sq(SqList *L);
 Status ListInsert_Sq(SqList *L,int i,ElemType e);
 Status ListDelect_Sq(SqList *L,int i,ElemType *e);
-//Status compare(ElemType a,ElemType b);
-//int LocalElem_Sq(SqList L,ElemType e, Status(*compare)(ElemType,ElemType));
+Status compare(ElemType a,ElemType b);
+int LocalElem_Sq(SqList L,ElemType e, Status(*compare)(ElemType,ElemType));
 #endif

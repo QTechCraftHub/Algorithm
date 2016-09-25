@@ -52,7 +52,7 @@ Status ListDelect(SqList *L,int i,ElemType *e) {
 	--L->length;                                //长度-1
 	return OK;
 }
-/*
+
 Status compare(ElemType a,ElemType b) {
 	if(a == b)
 		return OK;
@@ -65,10 +65,11 @@ int LocalElem_Sq(SqList L,ElemType e,Status(*compare)(ElemType,ElemType)) {
 	//若找到返回其在L中的位序，否则返回0
 	int i = 1;
 	ElemType *p = L.elem;                     //p指向L的第一个元素
-	while(i <= L.length && !(*compare)(*p++,e))
-		++i;
-	if(i <= L.length)
-		return i;
-	else
-		return 0;
-}*/
+	while(i <= L.length) {
+		if((*compare)(*p++,e)) {
+			return i;
+		}
+		i++;
+	}
+	return 0;
+}

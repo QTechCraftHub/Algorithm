@@ -18,8 +18,6 @@ int main() {
 	
 	ElemType data[10] = {12,31,24,52,11,62,18,63,75,10};
 
-//	int i;
-
 	for(i = 1;i <= 10;i++) {
 		ListInsert(&L,i,data[i-1]);
 	}
@@ -47,6 +45,20 @@ int main() {
 		}
 		printf("\n");
 		printf("Delect data is %d\n",e);
+	}
+
+	ElemType data_temp;
+	int location;
+	Status (*compare_temp)(ElemType,ElemType);
+	compare_temp = compare;
+	printf("Which data you want find :  ");
+	scanf("%d",&data_temp);
+	location = LocalElem_Sq(L,data_temp,*compare_temp);
+	if(0 == location) {
+		printf("Nothing!\n");
+	}
+	else {
+		printf("%d 's location is %d!\n",data_temp,location);
 	}
 	return 0;
 }
